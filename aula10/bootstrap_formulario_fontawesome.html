@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Folha de estilo do bootstrap -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<!-- Folha de estilo do font awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+	<title>Bootstrap - Formulário com Font Awesome</title>
+</head>
+<body>
+	<!-- A class container é uma classe do bootstrap que permite definir a largura responsiva do conteúdo -->
+	<div class="container">
+		<h1>Formulário com Bootstrap e Font Awesome</h1>
+
+		<!-- A classe mt-5 adiciona uma margin-top (de 1 a 5) -->
+		<form class="mt-5">
+			<!-- A classe form-group permite agrupar uma parte de um formulário com uma pequena margem -->
+			<div class="form-group form-row">
+				<!-- A classe form-row permite criar linhas para separar campos em colunas -->
+				<div class="col">
+					<!-- A classe input-group cria um agrupamento do icone com o input -->
+					<div class="input-group">
+						<div class="input-group-prepend">
+							<div class="input-group-text"><i class="fas fa-user-circle"></i></div>
+						</div>
+						<input type="text" class="form-control" name="nome" id="nome" placeholder="Nome">
+					</div>
+				</div>
+				<div class="col">
+					<!-- A classe input-group cria um agrupamento do icone com o input -->
+					<div class="input-group">
+						<div class="input-group-prepend">
+							<div class="input-group-text"><i class="fas fa-user-circle"></i></div>
+						</div>
+						<!-- placeholder exibe um texto temporário dentro do input, some ao clicar -->
+						<input type="text" class="form-control" name="sobrenome" id="sobrenome" placeholder="Sobrenome">
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<!-- A classe input-group cria um agrupamento do icone com o input -->
+				<div class="input-group">
+					<div class="input-group-prepend">
+						<div class="input-group-text">
+							<!-- A classe fa + fa-envelope exibe o ícone de um envelope -->
+							<i class="fas fa-envelope"></i>
+						</div>
+					</div>
+					<input type="email" class="form-control" name="email" id="email" placeholder="E-mail">
+				</div>
+				<small id="emailAjuda" class="form-text text-muted">Seu e-mail é confidencial.</small>
+			</div>
+			<!-- A classe btn-lg exibe o botão em um tamanho grande  -->
+			<!-- A classe btn-block exibe o botão com 100% do tamanho da tela  -->
+			<button type="submit" class="btn btn-primary btn-lg btn-block">
+				Enviar <i class="far fa-comment-dots"></i>
+			</button>
+		</form>
+	</div>
+
+	<!-- Bibliotecas utilizadas pelo bootstrap: jQuery e Popper, além do JS do próprio bootstrap -->	
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício JS</title>
+</head>
+<body>
+    <header>
+        <h1>Exercício JS</h1>
+    </header>
+    <section>
+        <button type="button" onclick="alert('Bem-vindo')"> Clique aqui </button>
+    </section>
+    <br/><br/>
+    <section>
+        <label>Digite seu nome: <input type="text" id="txtnome" value="" onchange="document.getElementById('lblnome').innerHTML = document.getElementById('txtnome').value"></label>
+        <p>Bem-vindo ao meu site: <span id="lblnome"></span></p>
+        <button type="button" onclick="alert(document.getElementById('txtnome').value)"> Ver meu nome </button>
+        <button type="button" onclick="document.getElementById('lblnome').innerHTML = document.getElementById('txtnome').value"> Preencher label </button>
+    </section>
+</body>
+</html>

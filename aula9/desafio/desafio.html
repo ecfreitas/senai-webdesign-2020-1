@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+	<style>
+		#area_imagens {
+			width: 300px;
+			height: 200px;
+			border: 1px solid black;
+			overflow: hidden;
+		}
+		img {
+			width: 100%;
+			height: 100%;
+			display: none;
+		}
+
+		img:first-child {
+			display: block;
+		}
+	</style>
+
+	<title>Document</title>
+</head>
+<body>
+
+	<div id="area_imagens">
+		<img src="img/carro1.png" class="ativa">
+		<img src="img/carro2.png">
+		<img src="img/carro3.jpg">
+	</div>
+	
+	<button id="anterior">&laquo;</button>
+	<button id="proximo">&raquo;</button>
+
+	<script>
+		$(document).ready(function(){
+			$("#anterior").click(function(){
+				// Armazena o elemento que está ativo em uma variável
+				var element = $('#area_imagens .ativa');
+				// Procura o elemento img anterior ao ativo e armazena em uma variável
+				var prev_element = element.prev('#area_imagens img');
+				// Remove a classe ativa do elemento ativo e o esconde
+				element.removeClass('ativa').fadeOut(200);
+				// Verifica se existe um elemento anterior
+				if (prev_element.length > 0) {
+					// Caso exista
+					// Adiciona a classe ativa no elemento anterior e mostra ele
+					prev_element.addClass('ativa').fadeIn(200);
+				} else {
+					// Caso não exista
+					// Procura pelo último elemento img, adiciona a classe ativa e mostra ele
+					$('#area_imagens img').last().addClass('ativa').fadeIn(200);
+				}
+			});
+
+			$("#proximo").click(function(){
+				// Armazena o elemento que está ativo em uma variável
+				var element = $('#area_imagens .ativa');
+				// Procura o elemento img posterior ao ativo e armazena em uma variável
+				var next_element = element.next('#area_imagens img');
+				
+				// Remove a classe ativa do elemento ativo e o esconde
+				element.removeClass('ativa').fadeOut(200);
+				// Verifica se existe um elemento posterior
+				if (next_element.length > 0) {
+					// Caso exista
+					// Adiciona a classe ativa no elemento posterior e mostra ele
+					next_element.addClass('ativa').fadeIn(200);
+				} else {
+					// Caso não exista
+					// Procura pelo primeiro elemento img, adiciona a classe ativa e mostra ele
+					$('#area_imagens img').first().addClass('ativa').fadeIn(200);
+				}
+			});
+		});
+
+	</script>
+</body>
+</html>

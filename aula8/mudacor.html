@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+</head>
+<body>
+	<h2>Muda cor</h2>
+	<br/>
+	<div>
+		<p onmouseout="mudaCor(this, false)" onmouseover="mudaCor(this, true)">
+			Meu código mudando de cor
+		</p>
+	</div>
+    <script type="text/javascript">
+		function mudaCor(elemento, mudar) {
+			if (mudar) {
+				elemento.style.background = 'red';
+				elemento.innerHTML = 'mudei o texto';
+			} else {
+				elemento.style.background = '#FFF';
+				elemento.innerHTML = 'Meu código mudando de cor';
+			}			
+		}
+    </script>
+</body>
+</html>

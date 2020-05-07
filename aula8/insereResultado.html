@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript dentro do HTML</title>
+</head>
+<body>
+    <h2>Calculadora</h2>
+    <label for="valor_x">Valor de x:</label>
+    <input type="number" name="valor_x" id="valor_x" value="">
+    <label for="valor_y">Valor de y:</label>
+    <input type="number" name="valor_y" id="valor_y" value="">
+    <br/>
+    <button type="button" onclick="insereResultado()">Calcular</button>
+    <p id="resultado"></p>
+    <script type="text/javascript">
+        function somaDoisValores(x, y) {
+            var resultado = parseInt(x) + parseInt(y);
+            return resultado;            
+        }
+        function insereResultado() {
+            var x = document.getElementById('valor_x').value;
+            var y = document.getElementById('valor_y').value;
+            var resultado = somaDoisValores(x, y);
+            document.getElementById('resultado').innerHTML = "Resultado = " + resultado;
+        }
+    </script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<title>Exercício 1 usando jQuery</title>
+</head>
+<body>
+
+	<h2>Cálculo de Média</h2>
+
+	<label for="nota_1">Nota 1:</label>
+    <input type="text" name="nota_1" id="nota_1" value="">
+    <label for="nota_2">Nota 2:</label>
+	<input type="text" name="nota_2" id="nota_2" value="">
+	<label for="nota_3">Nota 3:</label>
+	<input type="text" name="nota_3" id="nota_3" value="">
+	
+	<br/>
+	
+	<button type="button" id="button_mostrar_media">Calcular Média</button>
+
+	<p id="resultado"></p>	
+	
+	<script type="text/javascript">
+		$(document).ready(function(){
+			// declaração da função dentro do jquery
+			calculaMedia = function() {
+				// pegar os valores dos inputs
+				var nota_1 = $("#nota_1").val();
+				var nota_2 = $("#nota_2").val();
+				var nota_3 = $("#nota_3").val();
+	
+				var media = (parseFloat(nota_1) + parseFloat(nota_2) + parseFloat(nota_3)) / 3;
+				return media;
+			}
+
+			$("#button_mostrar_media").click(function() {
+				var media = calculaMedia();
+				// document.getElementById('resultado') = $("#resultado")
+				// .innerHTML = .html()
+				$("#resultado").html("Média: " + media);
+			});
+
+			// onmouseout
+			$("#resultado").mouseout(function() {
+				// style.color
+				// Estou definindo a cor da fonte como preta
+				$(this).css('color', 'black');
+			});
+
+			// onmouseover
+			$("#resultado").mouseover(function() {
+				var media = calculaMedia();
+				if (media < 7) {
+					// Estou definindo a cor da fonte como vermelha
+					$(this).css('color', 'red');
+				} else {
+					// Estou definindo a cor da fonte como verde
+					$(this).css('color', 'green');
+				}
+			});
+
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Animação</title>
+  <style>
+	div {
+		position: absolute;
+		background-color: red;
+		left: 50px;
+		width: 90px;
+		height: 90px;
+		margin: 5px;
+	}
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+	
+	<button id="esquerda_aparatar">&laquo; Aparatar</button>
+	<button id="esquerda_rapida">&laquo;&laquo;</button>
+	<button id="esquerda_devagar">&laquo;</button>
+	<button id="direita_devagar">&raquo;</button>
+	<button id="direita_rapida">&raquo;&raquo;</button>
+	<button id="direita_aparatar">Aparatar &raquo;</button>
+	
+	<div class="caixa"></div>
+	
+	<script>
+		$(document).ready(function(){
+			// Ao clicar no elemento
+			$("#direita_devagar").click(function() {
+				// Move o elemento para esquerda mais 50px de forma lenta
+				$(".caixa").animate({ "left": "+=50px" }, "slow");
+			});
+
+			$("#direita_rapida").click(function() {
+				// Move o elemento para esquerda mais 100px de forma rápida
+				$(".caixa").animate({ "left": "+=100px" }, "fast");
+			});
+
+			$("#direita_aparatar").click(function() {
+				// Esconde o elemento com efeito por 300 milissegundos
+				$(".caixa").fadeOut(300);
+				$(".caixa").animate({ "left": "+=150px" }, "fast");
+				// Mostra o elemento com efeito por 300 milissegundos
+				$(".caixa").fadeIn(300);
+			});
+			
+			$("#esquerda_devagar").click(function(){
+				$(".caixa").animate({ "left": "-=50px" }, "slow");
+			});
+
+			$("#esquerda_rapida").click(function(){
+				$(".caixa").animate({ "left": "-=100px" }, "fast");
+			});
+
+			$("#esquerda_aparatar").click(function(){
+				$(".caixa").fadeOut(300);
+				$(".caixa").animate({ "left": "-=150px" }, "fast");
+				$(".caixa").fadeIn(300);
+			});
+
+		});
+	</script>
+ 
+</body>
+</html>

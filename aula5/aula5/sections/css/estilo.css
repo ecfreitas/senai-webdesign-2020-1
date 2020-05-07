@@ -1,0 +1,44 @@
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+header {
+    background-color: red;
+    height: 100px;
+}
+
+nav {
+    background-color: blue;
+    height: 50px;
+}
+
+main {
+    background-color: greenyellow;
+    height: 500px;
+    width: 60%;
+    float: left;
+}
+
+section {
+    background-color: green;
+    height: 50%;
+}
+
+article {
+    background-color: hotpink;
+    height: 50%;
+}
+
+aside {
+    background-color:gray;
+    height: 500px;
+    width: 40%;
+    float: right;
+}
+
+footer {
+    background-color: indigo;
+    height: 100px;
+    clear: both;
+}

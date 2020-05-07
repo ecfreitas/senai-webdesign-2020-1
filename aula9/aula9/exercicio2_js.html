@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+</head>
+<body>
+	<h2>Cálculo de Média</h2>
+	
+	<p id="resultado_media"></p>
+	
+	<script type="text/javascript">
+		function calculaMedia(nota_1, nota_2, nota_3) {
+			// Recebo as notas como texto e converto para float (ex: 0.00)
+			// Somo as notas e divido por 3
+            var media = ( parseFloat(nota_1) + parseFloat(nota_2) + parseFloat(nota_3) ) / 3;
+            return media;            
+		}
+
+		function main() {
+			// Solicito ao usuário que informe as notas em uma caixa de texto na tela
+			var nota_1 = prompt("Digite a nota 1");
+			var nota_2 = prompt("Digite a nota 2");
+			var nota_3 = prompt("Digite a nota 3");
+			
+			// Armazeno o resultado da média que é calculada pelo método calculaMedia
+			var media = calculaMedia(nota_1, nota_2, nota_3);
+
+			// Armazeno o elemento com o id "resultado_media" para uso posterior
+			var p_resultado = document.getElementById('resultado_media');
+
+			// Escrevo HTML dentro do elemento com id "resultado_media"
+			p_resultado.innerHTML = "Média: " + media;
+			if (media < 7) {
+				// Mudo a cor de fundo do elemento
+				p_resultado.style.background = 'red';
+			} else {
+				// Mudo a cor de fundo do elemento
+				p_resultado.style.background = 'green';
+			}
+		}
+
+		// Chamo o método principal que irá fazer toda a ação
+		main();
+		
+    </script>
+</body>
+</html>

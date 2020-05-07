@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+	<style>
+		#area_imagens {
+			width: 300px;
+			height: 200px;
+			border: 1px solid black;
+			overflow: hidden;
+		}
+		img {
+			width: 100%;
+			height: 100%;
+			display: none;
+		}
+		img:first-child {
+			display: block;
+		}
+	</style>
+
+	<title>Desafio jQuery</title>
+</head>
+<body>
+
+	<div id="area_imagens">
+		<img src="img/carro1.png" class="ativa">
+		<img src="img/carro2.png">
+		<img src="img/carro3.jpg">
+	</div>
+	
+	<button id="anterior">&laquo;</button>
+	<button id="proximo">&raquo;</button>
+
+	<script>
+		$(document).ready(function(){
+			// ESCREVER SEU CÓDIGO AQUI
+		});
+	</script>
+</body>
+</html>

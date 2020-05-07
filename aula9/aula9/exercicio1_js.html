@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Exercício 1</title>
+</head>
+<body>
+
+	<h2>Cálculo de Média</h2>
+
+	<label for="nota_1">Nota 1:</label>
+    <input type="number" name="nota_1" id="nota_1" value="">
+    <label for="nota_2">Nota 2:</label>
+	<input type="number" name="nota_2" id="nota_2" value="">
+	<label for="nota_3">Nota 3:</label>
+	<input type="number" name="nota_3" id="nota_3" value="">
+
+	<input type="hidden" name="media" id="media" value="0">
+	
+	<br/>
+	
+	<button type="button" onclick="mostraMedia()">Calcular Média</button>
+
+	<!-- Estou chamando os métodos passando o próprio elemento "p" como o elemento a sofrer a alteração -->
+	<p id="resultado" onmouseout="voltaCorOriginal(this)" onmouseover="mudaCorDeAcordoMedia(this)"></p>	
+	
+	<script type="text/javascript">
+		function calculaMedia(nota_1, nota_2, nota_3) {
+			// passo os valores que chegam como texto para inteiro
+			// somo as notas e divido por 3
+			var media = ( parseInt(nota_1) + parseInt(nota_2) + parseInt(nota_3) ) / 3;
+			// retorno a média calculada
+            return media;
+		}
+		
+		function mostraMedia() {
+			// pego os valores dos inputs e armazeno em variáveis
+			var nota_1 = document.getElementById('nota_1').value;
+			var nota_2 = document.getElementById('nota_2').value;
+			var nota_3 = document.getElementById('nota_3').value;
+			// armazeno na variável media o resultado da média calculada
+			var media = calculaMedia(nota_1, nota_2, nota_3);
+
+			// pego o elemento com id media e defino o valor como o resultado da média calculada
+			document.getElementById('media').value = media;
+			// pego o elemento com id resultado e escrevo um texto HTML dentro dele
+			document.getElementById('resultado').innerHTML = "Média: " + media;
+		}
+
+		function mudaCorDeAcordoMedia(elemento) {
+			// Pego o valor do input com ID media
+			var media = document.getElementById('media').value;
+
+			// Verifico se a média é menor que 7
+			if (media < 7) {
+				// Defino a cor da fonte do elemento para vermelho
+				elemento.style.color = 'red';
+			} else {
+				// Defino a cor da fonte do elemento para verde
+				elemento.style.color = 'green';
+			}
+		}
+
+		function voltaCorOriginal(elemento) {
+			// Defino a cor da fonte do elemento para preto (original)
+			elemento.style.color = 'black';
+		}
+	</script>
+</body>
+</html>
